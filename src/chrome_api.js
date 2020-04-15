@@ -23,7 +23,7 @@ const chrome_api={
 	    });
 	  });
   },
-  async  on_message_from_chrome(){
+  async on_message_from_chrome(){
     return new Promise(resolve=>{
       chrome.runtime.onMessage.addListener(
         function(request, sender, sendResponse) {

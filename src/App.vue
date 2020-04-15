@@ -1,14 +1,11 @@
 <template>
   <div id="app">
-<!-- Image and text -->
 <nav class="navbar navbar-light bg-light ">
   <a class="navbar-brand" href="#">
     <img src="https://getbootstrap.com/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
     IG網紅收集
   </a>
 </nav>
-
-
  <div class="container">
 
 <notice-comp :type="alert_type"></notice-comp>
@@ -37,16 +34,12 @@ h4{
 
 </style>
 <script>
-
-
 import axios from 'axios';
 import TextComp from './TextComp.vue'
 import SelectComp from './SelectComp.vue'
 import CheckComp from './CheckComp.vue'
 import NoticeComp from './NoticeComp.vue'
 import chrome_api from './chrome_api.js'
-
-
 export default {
   data () {
     return {
