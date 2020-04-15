@@ -1,0 +1,24 @@
+#app{
+	width:300px;
+}
+$body-bg: #eee;
+$body-color: #111;
+/*! `Custom` Bootstrap 4 theme */
+//https://bootstrap.build/
+$enable-grid-classes:true;
+$primary:#FF304F;
+$secondary:#CACACA;
+$success:#015668;
+$danger:#06648C;
+$info:#0F81C7;
+$warning:#0DE2EA;
+$light:#ececec;
+$dark:#222222;
+$spacer:10px;
+$border-width:1px;
+$btn-border-radius:.25rem;
+
+@import "./_variables.scss";
+// Add SASS theme customizations here..
+
+@import "../node_modules/bootstrap/scss/bootstrap";
