@@ -99,14 +99,15 @@ export default {
       }
   },
   mounted:function(){
+      //啟動後使用chrome.runtime.onMessage進行監聽
+      //等待回傳的訊息
       chrome_api.on_message_from_chrome().then(req=>{
         this.store.igUrl=req.parser.ig_url
         this.store.name=req.parser.title
         this.store.email=req.parser.email
         this.store.fanAmount=req.parser.fans_qty
       });
-      //chrome_api.get_current_tabs_url().then(res=>{this.store.current_host=res})
-      //invoke content_JS 取得頁面上的元素，回填欄位
+
       chrome_api.invoke_chrome_content_js_scope()
 
       chrome_api.get_chrome_storage_data().then(res=>{

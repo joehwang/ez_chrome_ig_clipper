@@ -1,7 +1,7 @@
 var ig_parser= (function(){
+	//如果不是ig網址，跳出執行
 	let is_ig=RegExp(/https:\/\/www\.instagram\.com\//)
 	if (!is_ig.test(location.href)) {
-		//alert('not ig')
 		return
 	}
 	let get_the_email = () => {
@@ -9,6 +9,7 @@ var ig_parser= (function(){
 		let email=""
 		//some/every/forEach都是疊代器
 		//some和every可用return 跳出
+		//在每一行文字搜尋email
 		rows.some(row => {
 			email=row.match(/[A-Za-z0-9_.]*@[A-Za-z0-9]*\.[A-Za-z0-9]*/)
 			if(email){
@@ -17,12 +18,12 @@ var ig_parser= (function(){
 		});
 		return (email) ? email[0] : ""
 	};
-
+	//取讚數
 	let get_the_fans_qty=()=>{
 		let s=$("header section ul li span[title]").attr("title").replace(/,/g,"")
 		return (s) ? s : "找不到"
 	}
-	get_the_fans_qty();
+	
 	return{
 		title:$("h1.rhpdm").text(),
 		email:get_the_email(),
